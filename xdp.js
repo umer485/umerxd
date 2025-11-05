@@ -1,24 +1,18 @@
-
-    
-    
-    
-    const CONFIG = {
+const CONFIG = {
   selector: '.license-check',
   keys: [
-  /* Username */ 'a',
-  /* Username */ 'b',
-  /* Username */ 'c',
-  /* Username */ 'd',
-  /* Username */ 'e',
-  /* Username */ 'f',
-  /* Username */ 'g',
-  /* Username */ 'h',
-  /* Username */ 'i',
-  /* Username */ 'j',
-  /* Username */ 'k'
-]
-
-
+    /* Username */ 'a',
+    /* Username */ 'b',
+    /* Username */ 'c',
+    /* Username */ 'd',
+    /* Username */ 'e',
+    /* Username */ 'f',
+    /* Username */ 'g',
+    /* Username */ 'h',
+    /* Username */ 'i',
+    /* Username */ 'j',
+    /* Username */ 'k'
+  ],
   whatsapp: '923304541001',
   whatsappMessage: 'Hello%20My%20Blog%20License%20Expired.%20I want to Buy New.'
 };
