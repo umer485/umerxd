@@ -1,4 +1,7 @@
-const CONFIG = {
+
+<script>
+    
+    const CONFIG = {
   selector: '.license-check',
   keys: ['BLOG-TRIAL-2025'],
   whatsapp: '923304541001',
@@ -61,16 +64,17 @@ const CONFIG = {
     });
 
     // Facebook-style header
-    const header = document.createElement('div');
-    header.innerHTML = `
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" fill="#1877F2"/>
-        <path d="M27.785 16.488H24.25V14.35C24.25 13.4 24.7 12.9 25.9 12.9H27.9V9H24.85C21.7 9 20.5 10.65 20.5 13.5V16.488H18V20.1H20.5V31H24.25V20.1H27.4L27.785 16.488Z" fill="white"/>
-      </svg>
-    `;
-    Object.assign(header.style, {
-      marginBottom: '16px'
-    });
+const header = document.createElement('div');
+header.innerHTML = `
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="11" stroke="#F44336" stroke-width="2" fill="white"/>
+    <path d="M12 7V13" stroke="#F44336" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="12" cy="16.5" r="1" fill="#F44336"/>
+  </svg>
+`;
+Object.assign(header.style, {
+  marginBottom: '16px'
+});
 
     const h = document.createElement('div');
     h.textContent = 'License Required';
@@ -242,3 +246,5 @@ const CONFIG = {
     watch();
   }
 })();
+    
+</script>
