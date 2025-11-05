@@ -28,35 +28,40 @@ const CONFIG={
     o.id='lpop';
     Object.assign(o.style,{
       position:'fixed',inset:'0',display:'flex',alignItems:'center',justifyContent:'center',
-      background:'rgba(0,0,0,0.65)',backdropFilter:'blur(4px)',zIndex:'99999999999',
-      opacity:'0',pointerEvents:'none',transition:'opacity .2s ease'
+      background:'rgba(0,0,0,0.70)',backdropFilter:'blur(3px)',zIndex:'99999999999',
+      opacity:'0',pointerEvents:'none',transition:'opacity .25s ease'
     });
+
     const c=document.createElement('div');
     Object.assign(c.style,{
-      width:'90%',maxWidth:'380px',background:'#fff',borderRadius:'16px',
-      padding:'24px',textAlign:'center',fontFamily:'system-ui,Arial',
-      boxShadow:'0 8px 24px rgba(0,0,0,.2)'
+      width:'92%',maxWidth:'360px',background:'#fff',borderRadius:'12px',
+      padding:'18px 20px',textAlign:'center',fontFamily:'system-ui,Arial',
+      boxShadow:'0 4px 14px rgba(0,0,0,.18)',overflow:'hidden'
     });
+
     const h=document.createElement('div');
     h.textContent='License Expired';
-    Object.assign(h.style,{fontSize:'22px',fontWeight:'700',marginBottom:'8px',color:'#111'});
+    Object.assign(h.style,{fontSize:'20px',fontWeight:'700',marginBottom:'6px',color:'#1877F2'});
 
     const d=document.createElement('div');
-    d.textContent='Your license is invalid or expired.';
-    Object.assign(d.style,{fontSize:'14px',color:'#666',marginBottom:'18px',lineHeight:'1.4'});
+    d.textContent='Your blog license is invalid or removed.';
+    Object.assign(d.style,{fontSize:'14px',color:'#555',marginBottom:'16px',lineHeight:'1.4'});
 
     const b=document.createElement('a');
     b.href=`https://wa.me/${WA}?text=${WA_MSG}`;
     b.target='_blank';
     b.rel='noopener';
-    b.textContent='Contact Now';
+    b.textContent='Contact Support';
     Object.assign(b.style,{
-      display:'inline-block',padding:'12px 20px',borderRadius:'10px',
-      background:'#1877F2',color:'#fff',fontWeight:'700',textDecoration:'none',
-      fontSize:'15px',boxShadow:'0 6px 14px rgba(24,119,242,.3)'
+      display:'inline-block',padding:'12px 20px',borderRadius:'8px',
+      border:'2px solid #1877F2',color:'#1877F2',fontWeight:'700',textDecoration:'none',
+      fontSize:'14px'
     });
 
-    c.appendChild(h);c.appendChild(d);c.appendChild(b);o.appendChild(c);
+    c.appendChild(h);
+    c.appendChild(d);
+    c.appendChild(b);
+    o.appendChild(c);
     document.documentElement.appendChild(o);
 
     function show(){
@@ -71,7 +76,7 @@ const CONFIG={
 
   const style=document.createElement('style');
   style.textContent=
-  '.lblock *:not(#lpop):not(#lpop *){pointer-events:none !important;user-select:none !important;filter:blur(2px) grayscale(.1);transition:filter .2s;}';
+  '.lblock body>*:not(#lpop):not(#lpop *){pointer-events:none !important;user-select:none !important;filter:blur(2px) grayscale(.1);}';
   document.head.appendChild(style);
 
   function getTxt(){
