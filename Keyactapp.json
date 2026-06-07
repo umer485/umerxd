@@ -1,12 +1,8 @@
  [
   {
+    "id": "ecd688763f382382",
     "username": "user1",
     "password": "pass123",
-    "expiry": "2027-01-01"
-  },
-  {
-    "username": "user2",
-    "password": "pass456",
-    "expiry": "2027-06-01"
+    "expiry": "2027-12-31"
   }
-]
+ ]
