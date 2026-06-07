@@ -3,11 +3,11 @@
     "id": "ecd688763f382382",
     "username": "dpmods",
     "password": "dpmods",
-    "expiresAt": "2026-12-31",
+    "expiresAt": "2025-12-31",
     "allowOffline": true
   },
   {
-    "id": "android_device_id_2",
+    "id": "ecd688763f382382",
     "username": "user2",
     "password": "pass2",
     "expiresAt": "2025-11-30",
