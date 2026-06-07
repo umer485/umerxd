@@ -1,16 +1,12 @@
  [
-  
-    "id": "ecd688763f382382",
-    "username": "dpmods",
-    "password": "dpmods",
-    "expiresAt": "2025-12-31",
-    "allowOffline": true
- ,
- 
-    "id": "ecd688763f382382",
+  {
+    "username": "user1",
+    "password": "pass123",
+    "expiry": "2027-01-01"
+  },
+  {
     "username": "user2",
-    "password": "pass2",
-    "expiresAt": "2025-11-30",
-    "allowOffline": false
-  ,
+    "password": "pass456",
+    "expiry": "2027-06-01"
+  }
 ]
