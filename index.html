@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_KcVw2sNxVvZovOV1M7e4bPOyyTfS1O67eRZlO_XsLWZ4udRcpDPMCx9ZbPYII3RzZNlO4la8JaZtcgmxEwDgUjr1Edn8BhgxwpFSJArCvS-btblF0Ab2h-rQ0FdcMNlnVHMpkTlEWH6X25zYxJsrBHd7NyqzoIHggpX0aReOthHyH98mewMajLYBw6RJ/s1600/1000017696.jpg" rel="icon" type="image/jpeg"/>
+<title>Umer Farooq XD</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+font-family: "Inter", sans-serif;
+}
+:root {
+--dark-color: #1a1423;
+--light-color: #fdfffc;
+--accent-color: #7161ef;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+margin: 0;
+color: var(--dark-color);
+}
+a {
+color: var(--dark-color);
+text-decoration: none;
+}
+.container {
+max-width: 1200px;
+margin-inline: auto;
+padding: 0 28px;
+}
+.btn {
+background: var(--accent-color);
+color: var(--light-color);
+padding: 8px 32px;
+border: 2px solid var(--accent-color);
+display: inline-block;
+font-weight: 500;
+cursor: pointer;
+transition: all 300ms ease;
+white-space: nowrap;
+}
+.btn:hover {
+background: #5947de;
+border: 2px solid #5947de;
+}
+.btn.outlined {
+color: var(--accent-color);
+background: var(--light-color);
+white-space: nowrap;
+}
+.btn.outlined:hover {
+background: var(--accent-color);
+color: #fff;
+}
+.btn.light {
+background: var(--light-color);
+color: var(--dark-color);
+border: 2px solid var(--light-color);
+}
+.btn.light:hover {
+background: var(--accent-color);
+color: var(--light-color);
+}
+img {
+width: 100%;
+display: flex;
+object-fit: cover;
+}
+h1 {
+font-size: 60px;
+line-height: 100%;
+font-weight: 800;
+letter-spacing: -1px;
+margin: 16px 0;
+background: linear-gradient(90deg, #433798 20%, #1a1423 60%);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+h2 {
+font-size: 36px;
+line-height: 120%;
+font-weight: 800;
+letter-spacing: -1px;
+margin: 8px 0;
+background: linear-gradient(90deg, #4437a4 8%, #0f0916 60%);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+h3 {
+font-size: 24px;
+line-height: 130%;
+letter-spacing: -1px;
+margin: 8px 0;
+}
+p {
+font-size: 16px;
+line-height: 160%;
+}
+section {
+padding: 120px 0;
+}
+/* Navbar */
+nav {
+position: fixed;
+top: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+left: 0;
+right: 0;
+max-width: 1200px;
+margin-inline: auto;
+z-index: 5;
+padding: 16px 32px;
+background: rgba(255, 255, 255, 0.8);
+backdrop-filter: blur(10px);
+--webkit-backdrop-filter: blur(10px);
+box-shadow: 0 8px 42px rgba(0, 0, 0, 0.1);
+}
+nav .menu-items {
+display: flex;
+align-items: center;
+gap: 40px;
+font-weight: 500;
+}
+nav .menu-items a:hover {
+color: var(--accent-color);
+}
+nav .menu-items .btn:hover {
+color: var(--light-color);
+}
+.logo {
+font-weight: 700;
+font-size: 18px;
+}
+/* Hero Section */
+header {
+display: flex;
+height: 100vh;
+align-items: center;
+padding-top: 70px;
+min-height: 600px;
+max-height: 800px;
+position: relative;
+}
+.buttons {
+display: flex;
+gap: 14px;
+margin-top: 32px;
+align:center;
+}
+header .left {
+max-width: 50%;
+}
+header .right {
+position: absolute;
+bottom: 0;
+right: 0;
+}
+header .right img {
+height: 600px;
+object-fit: cover;
+}
+header .bg-color {
+position: absolute;
+width: 400px;
+height: 400px;
+background: #ad95ff;
+right: 0;
+top: 120px;
+z-index: -1;
+border-radius: 50%;
+filter: blur(115px);
+}
+/* Featured Section */
+.featured {
+z-index: 2;
+position: relative;
+}
+.featured img {
+width: auto;
+height: 32px;
+}
+.featured .logos {
+display: flex;
+gap: 60px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.featured .container {
+display: flex;
+flex-direction: column;
+gap: 8px;
+align-items: center;
+padding: 40px 32px;
+box-shadow: 0 0 42px -20px rgba(0, 0, 0, 0.2);
+border-radius: 30px;
+background: var(--light-color);
+}
+/* About section */
+#about {
+background: #f5f5f5;
+margin-top: -60px;
+padding-top: 110px;
+}
+#about .container {
+display: flex;
+align-items: center;
+gap: 80px;
+}
+section .icon {
+width: 30px;
+}
+.features-container {
+display: flex;
+gap: 40px;
+margin-top: 32px;
+}
+.feature {
+flex: 1;
+}
+section .btn {
+margin-top: 28px;
+}
+#services {
+padding: 60px 16px; /* mobile side spacing */
+}
+#services .container {
+max-width: 1200px;
+margin: 0 auto; /* perfect center */
+padding: 0 8px; /* equal left right space */
+}
+.heading-container {
+text-align: center;
+margin-bottom: 40px;
+}
+.services-container {
+display: flex;
+gap: 20px;
+justify-content: center;
+flex-wrap: wrap; /* mobile fix */
+}
+.service {
+background: #fff;
+border-radius: 12px;
+overflow: hidden;
+flex: 1 1 320px; /* responsive box width */
+max-width: 350px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+transition: 0.3s;
+}
+.service img {
+width: 100%;
+height: auto;
+display: block;
+}
+.service .content {
+padding: 12px;
+text-align: center;
+}
+.service h3 {
+margin-bottom: 10px;
+font-size: 18px;
+}
+.service p {
+font-size: 13px;
+color: #555;
+}
+/* Mobile Optimization */
+@media (max-width: 768px) {
+.services-container {
+flex-direction: column;
+align-items: center;
+}
+.service {
+width: 100%;
+max-width: 100%;
+}
+}
+/* Why Section */
+#why .container {
+display: flex;
+gap: 60px;
+align-items: center;
+}
+#why {
+background: var(--accent-color);
+color: var(--light-color);
+}
+#why h2 {
+background: var(--light-color);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+#why .icon {
+filter: brightness(0) invert(1);
+}
+/* Contact Form */
+#contact {
+background: #f5f5f5;
+}
+form {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+form .group {
+display: flex;
+gap: 16px;
+}
+form input,
+form textarea {
+width: 100%;
+padding: 10px 24px;
+background: #fff;
+border: none;
+font-size: 16px;
+}
+form textarea {
+height: 100px;
+resize: none;
+}
+/* Footer */
+footer {
+background: var(--dark-color);
+color: var(--light-color);
+padding: 60px 32px;
+}
+/* Hidden elements */
+.menu-icon,
+.mobile-menu-items,
+.mobile-icons-container {
+display: none;
+}
+@media (max-width: 1100px) {
+h1 {
+font-size: 48px;
+}
+header .right img {
+width: 280px;
+}
+}
+@media (max-width: 800px) {
+.mobile-menu-items {
+display: flex;
+height: 100vh;
+width: 100%;
+position: fixed;
+top: 0;
+flex-direction: column;
+background: var(--dark-color);
+z-index: 800;
+justify-content: center;
+align-items: center;
+gap: 24px;
+transform: translateX(100%);
+transition: all 300ms ease;
+}
+.mobile-menu-items.active {
+transform: translateX(0);
+}
+.mobile-menu-items a {
+color: var(--light-color);
+}
+.mobile-menu-items .close-icon {
+filter: brightness(0) invert(1);
+position: fixed;
+top: 18px;
+right: 32px;
+cursor: pointer;
+width: 32px;
+}
+.menu-icon {
+display: block;
+cursor: pointer;
+padding: 2px;
+width: 32px;
+}
+h1 {
+font-size: 36px;
+line-height: 120%;
+}
+.container {
+max-width: 700px;
+}
+h2 {
+font-size: 28px;
+line-height: 130%;
+}
+h3 {
+font-size: 20px;
+}
+nav .menu-items {
+display: none;
+}
+/* Header */
+header .right {
+position: relative;
+display: flex;
+justify-content: center;
+}
+header {
+flex-direction: column-reverse;
+height: auto;
+gap: 20px;
+max-height: fit-content;
+padding-bottom: 60px;
+}
+header .right {
+position: relative;
+width: 230px;
+height: 230px;
+margin: auto;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* Rainbow rotating border */
+header .right::before {
+content: "";
+position: absolute;
+inset: -6px;
+border-radius: 50%;
+background: conic-gradient(
+red, orange, yellow, green, cyan, blue, violet, red
+);
+animation: rotateBorder 3s linear infinite;
+z-index: 0;
+}
+/* Inner white gap */
+header .right::after {
+content: "";
+position: absolute;
+inset: 4px;
+background: #fff;
+border-radius: 50%;
+z-index: 1;
+}
+/* Image */
+header .right img {
+width: 180%;
+height: 100%;
+border-radius: 50%;
+object-fit: cover;
+z-index: 2;
+object-position:100% top;
+}
+/* Animation */
+@keyframes rotateBorder {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+header .left {
+max-width: 100%;
+}
+/* Featured */
+.featured .logos {
+gap: 36px;
+}
+.featured img {
+height: 28px;
+}
+/* About */
+#about .container {
+flex-direction: column;
+}
+.features-container {
+flex-direction: column;
+}
+/* Why Choose Us Section */
+#why .container {
+flex-direction: column;
+}
+/* Contact */
+form .group {
+flex-direction: column;
+}
+}
+/* Search box */
+.search-icon svg {
+width: 24px;
+}
+.search-icon {
+cursor: pointer;
+}
+.search-container {
+position: fixed;
+display: grid;
+place-items: center;
+inset: 0;
+padding: 32px;
+background: rgba(0, 0, 0, 0.8);
+z-index: 800;
+backdrop-filter: blur(8px);
+opacity: 0;
+pointer-events: none;
+transition: all 300ms ease;
+}
+.search-container.active {
+opacity: 1;
+pointer-events: auto;
+}
+.search-container input[type="search"] {
+width: 700px;
+border-radius: 8px;
+font-size: 20px;
+padding-block: 16px;
+border: none;
+padding-left: 60px;
+padding-right: 70px;
+}
+.search-container .search-input-container::after {
+content: "Esc";
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: 16px;
+font-size: 13px;
+padding: 4px 8px;
+background: rgba(187, 187, 187, 0.2);
+border: 1px solid rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+}
+.search-container input[type="search"]:focus {
+outline: none;
+}
+.search-container .search-input-container {
+position: relative;
+}
+.search-container .icon {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+content: "";
+}
+.search-container .icon svg {
+width: 24px;
+}
+.search-container .search-btn {
+padding: 12px 24px;
+font-size: 16px;
+font-weight: bold;
+border: none;
+background: var(--light-color);
+border-radius: 8px;
+width: fit-content;
+}
+@media (max-width: 1000px) {
+.search-container form {
+width: 100%;
+}
+.search-container input[type="search"] {
+width: 100%;
+font-size: 18px;
+}
+.search-container .search-input-container::after {
+display: none;
+}
+}
+@media (max-width: 800px) {
+.mobile-icons-container {
+display: flex;
+gap: 24px;
+}
+}
+#blog {
+padding-top: 40px;
+padding-bottom: 40px;
+}
+#about {
+padding-top: 120px;
+padding-bottom: 0px;
+}
+/* Announcement bar */
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+/* Skills section */
+.skills-section {
+  background: #f0f2f8;
+  padding: 32px 24px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.skills-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1a2a6c, #2a4c9e);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+  position: relative;
+  display: inline-block;
+}
+.skills-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #2a4c9e, #6c8fd1);
+  border-radius: 3px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+}
+.skill-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.12);
+  border-color: rgba(42, 76, 158, 0.15);
+}
+.skill-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0a1e3c;
+  letter-spacing: -0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skill-title::before {
+  content: "\2713";
+  color: #2a4c9e;
+  font-size: 16px;
+}
+.skill-desc {
+  font-size: 14px;
+  color: #2c3e50;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  background: #fafbfe;
+  padding: 12px;
+  border-radius: 14px;
+  border-left: 2px solid #2a4c9e;
+}
+.skill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 8px 18px;
+  background: #1e3a6f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+.skill-btn:hover {
+  background: #0f2b4f;
+  transform: scale(1.02);
+}
+.skill-btn::after {
+  content: "\279C";
+  font-size: 14px;
+}
+.skill-btn:hover::after {
+  transform: translateX(3px);
+}
+@media (max-width: 640px) {
+  .skills-section {
+    padding: 24px 16px;
+  }
+  .skills-title {
+    font-size: 24px;
+  }
+  .skill-card {
+    padding: 16px;
+  }
+}
+/* Ready Made Setup section */
+.rms-section {
+  max-width: 780px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 16px;
+}
+.rms-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(255,165,0,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.rms-card {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(145deg, #14141e 0%, #1a1a28 100%);
+  border: 1px solid rgba(255,165,0,0.25);
+  border-radius: 24px;
+  padding: 52px 48px 48px;
+  overflow: hidden;
+}
+.rms-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FFA500, #FFD700, #FFA500, transparent);
+  border-radius: 0 0 4px 4px;
+}
+.rms-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,165,0,0.1);
+  border: 1px solid rgba(255,165,0,0.35);
+  color: #FFA500;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+.rms-badge span { font-size: 15px; }
+.rms-heading {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.rms-heading em {
+  font-style: normal;
+  background: linear-gradient(90deg, #FFA500, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.rms-sub {
+  color: #9999bb;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+.rms-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+@media(max-width: 540px) {
+  .rms-features { grid-template-columns: 1fr; }
+  .rms-card { padding: 36px 24px 32px; }
+}
+.rms-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: border-color 0.25s, background 0.25s;
+}
+.rms-feature:hover {
+  border-color: rgba(255,165,0,0.3);
+  background: rgba(255,165,0,0.05);
+}
+.feat-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: linear-gradient(135deg, rgba(255,165,0,0.2), rgba(255,215,0,0.1));
+  border: 1px solid rgba(255,165,0,0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+.feat-text strong {
+  display: block;
+  color: #e8e8f0;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.feat-text span {
+  color: #7777aa;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.rms-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,165,0,0.2), transparent);
+  margin-bottom: 32px;
+}
+.rms-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.rms-note {
+  color: #7777aa;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 280px;
+}
+.rms-note strong { color: #ccccdd; }
+.rms-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #FFA500, #FFD700);
+  color: #0a0a0f;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 15px 34px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 30px rgba(255,165,0,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.rms-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255,165,0,0.5);
+}
+.rms-btn:active { transform: translateY(0); }
+.btn-arrow { font-size: 18px; transition: transform 0.2s; }
+.rms-btn:hover .btn-arrow { transform: translateX(4px); }
+/* Community section */
+.ufc-section {
+  position: relative;
+  padding: 60px 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 50%, #0d2144 100%);
+  text-align: center;
+}
+.ufc-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.ufc-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(100,160,255,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.ufc-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.ufc-logo {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 24px rgba(24,119,242,0.5);
+}
+.ufc-heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+.ufc-para {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.ufc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1877f2;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(24,119,242,0.45);
+  transition: background 0.2s, transform 0.2s;
+}
+.ufc-btn:hover {
+  background: #1464d0;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+/* Footer */
+.main-footer {
+  background: #18191a;
+  color: #e4e6eb;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px 15px 15px;
+}
+.footer-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.footer-desc {
+  font-size: 14px;
+  color: #b0b3b8;
+  max-width: 500px;
+  margin: 0 auto 15px;
+  line-height: 1.5;
+}
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.footer-btn:hover {
+  background: #1ebe5d;
+}
+.footer-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #b0b3b8;
+}
+.footer-bottom a {
+  color: #1877f2;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<!-- Announcement bar -->
+<div style="max-width:100%;background:#ffffff;border-left:5px solid #1877f2;
+padding:12px 0;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,0.08);
+font-family:Arial,sans-serif;margin:10px 0;overflow:hidden;position:relative;">
+  <div style="display:flex;align-items:center;gap:8px;padding:0 14px 6px 14px;">
+    <div style="width:10px;height:10px;background:#1877f2;border-radius:50%;"></div>
+    <div style="font-weight:600;color:#1877f2;font-size:14px;">
+      Announcement
+    </div>
+  </div>
+  <div style="white-space:nowrap;overflow:hidden;">
+    <div style="display:inline-block;padding-left:100%;
+    animation:scrollText 16s linear infinite;color:#050505;
+    font-size:14px;line-height:1.5;">
+      🔔 Yaha par apko Affiliate Marketing seekhny ka Full Free session mily ga. Practical k sath Step by Step seekhny k liye Enroll karay. Shukriya.
+    </div>
+  </div>
+</div>
+<!-- Mobile menu -->
+<div class="mobile-menu-items">
+<div class="close-icon">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip5lRZLAs1qfhOLsKGspjK_MKB5TiDtU4X5pQF1Iun7cdrEWe6Iv5Ipg_r8Z1o-sL-WwrWSc0cNcdMfX6A8yQjnHUacmfj8Uzmat-oshxg33fYdSzl38nAU02qJNvfy4CrL2aJodzEvClWi-COb4lqkoAq6Np-0eBN_wPLikwnJ3MIaQfmQQM0X1Dt5pNz/s1600/close-icon.webp"/>
+</div>
+<a href="https://umerxd.zya.me/">About Me</a>
+<a href="#services">Services</a>
+<a href="#blog">Bonus Offer</a>
+<a class="btn" href="#">Welcome</a>
+</div>
+<!-- Search overlay -->
+<div class="search-container">
+<form action="https://www.umerfarooqxd.com/search" method="GET">
+<div class="search-input-container">
+<input name="q" placeholder="Search this website..." type="search"/>
+<div class="icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<button class="search-btn" type="submit">Search</button>
+</form>
+</div>
+<!-- Navbar -->
+<div class="container">
+<nav>
+<div class="logo">
+<a class="notranslate" href="#">Umer Farooq XD</a>
+</div>
+<div class="menu-items">
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
+<a href="#blog">Blog</a>
+<a href="#contact">Contact Us</a>
+<a class="btn" href="#">Learn</a>
+<div class="search-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<div class="mobile-icons-container">
+<div class="menu-icon">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAXAR_FV0WI3OhLVPLlYezAvvxSQC7VFLnkoP37pOeAJv7uHQ8RGd7KFHKCiNtOkN-Jk7mN6_J8sGcO_l1MosrbZZa-hHzHyj4SE5swWWYQQTOEPpA8cnsgGhuDOIIXIa0XEag3c0LOdKmVcCCfHpChcpfLDzE62m8ol_QIepRrKz1yyW7OtPv3GiXjDq1/s1600/menu-icon.webp"/>
+</div>
+<div class="search-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</nav>
+</div>
+<!-- Hero section -->
+<div class="container">
+<header>
+<div class="left">
+<h1>Explore Affiliate Marketing In Pakistan</h1>
+<p class="sub-heading">
+Learn USA Affiliate Marketing in Pakistan By Umer Farooq XD.
+<br/>
+Note: Learn USA Affiliate Marketing Step by Step from Umer Farooq XD. Enroll now.
+</p>
+<div class="buttons">
+<a class="btn" href="https://umerfarooqxd.blogspot.com/p/service-selection-professional-form_65.html?m=1">Enroll Now</a>
+<a class="btn outlined" href="https://wa.me/923115922035?text=I%20want%20information">Contact Us</a>
+</div>
+</div>
+<div class="right">
+<img alt="Umer Farooq XD" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyM5uVhZFn9fziint4VrqUWfAGfkTD6-n0bw3_71-NilbgLPs2yZc-SvQ8oTbzPeZAb_h0s-vOEUS27bq6irUyt2AmKosvz8KXGot47rNsulQNtarlyEmxr6RzgW30TeUOnEtvRjoImOV6HKUsnXfctO6Kss_D0yUPs0QGyLr32Uq9WCF14N_-itrpQ4Js/s1600/1000013545.jpg"/>
+</div>
+<div class="bg-color"></div>
+</header>
+</div>
+<!-- Featured section -->
+<div class="featured">
+<div class="container">
+<h2>Featured By</h2>
+<div class="logos">
+<h2>UMER FAROOQ XD </h2>
+</div>
+</div>
+</div>
+<!-- About section -->
+<section id="about">
+<div class="container">
+<div class="left">
+<h2>Unlock the Power Affiliate of Marketing </h2>
+<p>
+Job nahi mil rahi?
+&#8226; Online earning try ki magar fail ho gaye?
+&#8226; Freelancing mushkil lagti ha.
+All solutions = Affiliate Marketing
+</p>
+<div class="features-container">
+<div class="feature">
+<div class="icon">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-JYRr4ZeiO2GPo7be6HZqnQRZVnLU1IxMoEYmaADZj271h9oAO6_M1NowN713wH-xVxn2c64OQRHJ44sBgBZ9ZbtD03VyQHDGPZly22db19-3p_QtCpyshJis5hJstNetaTP910zWeHb4bLIddrtapYSqsw7Uk5ZDTl9pVozgrrNuSyNq9PSyxa4u-qzb/s1600/check-icon.webp"/>
+</div>
+<h3>Simplified Setup</h3>
+<p>
+Is session ma ap seekho gya Affiliate Marketing kaha say shuru karay.Kasy shuru karay. Ap Complete Roadmap smj paye gay.
+</p>
+</div>
+<div class="feature">
+<div class="icon">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-JYRr4ZeiO2GPo7be6HZqnQRZVnLU1IxMoEYmaADZj271h9oAO6_M1NowN713wH-xVxn2c64OQRHJ44sBgBZ9ZbtD03VyQHDGPZly22db19-3p_QtCpyshJis5hJstNetaTP910zWeHb4bLIddrtapYSqsw7Uk5ZDTl9pVozgrrNuSyNq9PSyxa4u-qzb/s1600/check-icon.webp"/>
+</div>
+<h3>Easy to Understand Language</h3>
+<p>
+Pora session apki apni zuban ma Asaan aur achay lafzo ma jo apko samajny ma asaani karay.
+</p>
+</div>
+</div>
+<a class="btn outlined" href="https://umerfarooqxd.blogspot.com/2026/04/affiliate-marketing-course-margin-0.html?m=1">Start Free Session</a>
+</div>
+<div class="right">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUzXnjvkjU_91iuh4iToH4GC8_ndaWa-bqIjKZGVWAvzjzBDyI3v6rNi5hcsSGt25Mf2g3r0WD_5YK2u_LYxjMXb16SF879V1Yny2Pb8JBEo5zfFAvO4EjXFH5D1k0URSHhkIuimHtDAZGPBESBxwC_TjDe26xWUi3gA84GEBE16M8cOOQzluBAP3b5l_4/s16000/image1.jpg"/>
+</div>
+</div>
+</section>
+<!-- Services section -->
+<section id="services">
+<div class="container">
+<div class="heading-container">
+<h2>My Services</h2>
+<p>
+Main Umer Farooq Affiliate Marketing aur Web Development services offer kar raha hoon, jo aapko fully online presence provide karti hain.
+Yeh specially beginners ke liye hai jo high fees afford nahi kar sakte.
+</p>
+</div>
+<div class="services-container">
+<div class="service">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3Asd43yW2Gi0e_XYVSRJxqTirMjWfgj2FyFbtOHW9aloJ1-rKse9AoumTqoKJ3wLq2BBnkTY5IyCu2oHfTH-Mliz-Jd3WCL_shbuDwUv3CtSEDJZQB0cw2mEvpzvQjkbf5WWkfrou2Ef-BfErWCAUBx7NeIS3N_gfrvpsptICFIHAbMKC_2DLdSiJtPfz/s16000/service1.jpg"/>
+<div class="content">
+<h3>Blogger Web Development</h3>
+<p>
+Hosting-less Blogger websites &#8212; bina hosting cost ke apni website online karein.
+Apna business ya services ko professionally launch karein, minimum kharch ke sath.
+</p>
+</div>
+</div>
+<div class="service">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEDZDTdomkEIsam2jIAa8TSNQH0diR5V-aJvSPVHJ86hSwOOapRNX3fmzUq6HgIuUa8ft646ReVZX0m4Dpn0FQbbioOq6IvuLxIA6khQECjJAO2nVU3ANNFiullE5zYEZ44Kiw0aYIl0WMSE2dTfnZUHG02M_9zqsETK5c_NwieV2qMcZ1etWu2AKCfE10/s16000/service2.jpg"/>
+<div class="content">
+<h3>Affiliate Marketing </h3>
+<p>
+Pakistan mein pehli dafa Affiliate Marketing seekhne ka moqa &#8212; Free aur Paid sessions ke sath.
+</p>
+</div>
+</div>
+<div class="service">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVYdBhOL-f3CFPRyvLzZ4UfIpRF7zbHQ3ZRDYUWjTHM_pWR0cXtuIXkpyLhk_-SkZBaraali9JSEbtXVVydPODOD7oicOFmZp7_zrS1ZvwgTr6LFQ3sN9b4tDFgXtKTWdcDjbWiBLMMV372mevtSHK_NS-LCCCyJvQjhrvOU8pJ7WQBYrNVtvrvMgxAQ7D/s16000/service3.jpg"/>
+<div class="content">
+<h3>Affiliate Marketing Session</h3>
+<p>
+Free Session: Is mein complete strategies aur planning detail se samjhayi gay ha . - Paid Session:Is ma Live chat support aur daily practical tasks se step-by-step training di jaye gi.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why choose us section -->
+<section id="why">
+<div class="container">
+<div class="left">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixpXwquZbLRXkz1YEKk5Cne6WqyBq7PHToernzpYYZbfGiPBa7SpOG3cWvlYhin6IMl0K5GEBv8Oo0AZwkmwqmqOLAhhgGdD_oKDHoYe-W9QWy9kbb6cOxPsD6twm339oM7xfu475jsWs1-aIV1_THY59oWfwYjc-VMTmgON24Sq8CPiOjIkWU_XvCTl3F/s16000/image2.png"/>
+</div>
+<div class="right">
+<h2>Why Choose Umer Farooq XD</h2>
+<div class="features-container">
+<div class="feature">
+<div class="icon">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-JYRr4ZeiO2GPo7be6HZqnQRZVnLU1IxMoEYmaADZj271h9oAO6_M1NowN713wH-xVxn2c64OQRHJ44sBgBZ9ZbtD03VyQHDGPZly22db19-3p_QtCpyshJis5hJstNetaTP910zWeHb4bLIddrtapYSqsw7Uk5ZDTl9pVozgrrNuSyNq9PSyxa4u-qzb/s1600/check-icon.webp"/>
+</div>
+<h3>Expertise</h3>
+<p>
+Main Blogger websites ka expert hoon aur pichlay 6 saalon se is field mein consistently kaam karte hue apni strong reputation build kar raha hu.
+</p>
+</div>
+<div class="feature">
+<div class="icon">
+<img alt="" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-JYRr4ZeiO2GPo7be6HZqnQRZVnLU1IxMoEYmaADZj271h9oAO6_M1NowN713wH-xVxn2c64OQRHJ44sBgBZ9ZbtD03VyQHDGPZly22db19-3p_QtCpyshJis5hJstNetaTP910zWeHb4bLIddrtapYSqsw7Uk5ZDTl9pVozgrrNuSyNq9PSyxa4u-qzb/s1600/check-icon.webp"/>
+</div>
+<h3>Customization</h3>
+<p>
+Customization mein kabhi bhi user ko compromise mehsoos nahi hone diya. Har client ke saath complete satisfaction ensure karte hue hi project finalize karta hoon.
+</p>
+</div>
+</div>
+<a class="btn light" href="https://umerxd.zya.me/">My Intro</a>
+</div>
+</div>
+</section>
+<!-- Extra bonuses section -->
+<div class="container">
+<section id="blog">
+<div class="heading-container">
+<h2>Extra Bonuses</h2>
+<div style="max-width:500px;background:#ffffff;border:1px solid #ddd;border-radius:10px;padding:16px 18px;box-shadow:0 2px 10px rgba(0,0,0,0.08);font-family:Arial,sans-serif;line-height:1.6;color:#1c1e21;">
+<div style="font-weight:600;font-size:15px;margin-bottom:10px;">
+Paid Session Benefits
+</div>
+<div style="margin-bottom:8px;">
+1. Paid Session join kerny waly students ko Pre-Build Affiliate Store dia jaye ga.
+</div>
+<div style="margin-bottom:8px;">
+2. Meta Ads Pro marketing sales Strategy free mein seekhay jaye gi.
+</div>
+<div style="margin-bottom:8px;">
+3. Personally Live Support b di jaey gi (Only for First 10 Students).
+</div>
+</div>
+</div>
+<div class="services-container"></div>
+<a class="btn outlined" href="https://umerfarooqxd.blogspot.com/p/service-selection-professional-form_65.html?m=1">
+Enroll Now
+</a>
+</section>
+</div>
+<!-- Skills section -->
+<div class="skills-section">
+<div class="skills-container">
+<div class="skills-title">My Skills and Works</div>
+<div class="skills-grid">
+<div class="skill-card">
+<div class="skill-title">Affiliate Marketing</div>
+<div class="skill-desc">
+<div>Ma kr raha hu USA Affiliate Marketing</div>
+<div>My USA Store</div>
+</div>
+<a class="skill-btn" href="https://brodeals.store" target="_blank">
+Visit Now
+</a>
+</div>
+<div class="skill-card">
+<div class="skill-title">Blogger Website Development</div>
+<div class="skill-desc">
+<div>Ma Blogger Web Development provide krta hu. Jis ma Beginners ko hazaro hi hosting kharedny k zrorat nai hoti. Is ma ap apni service aur har kisam ki website banwa skty ha.</div>
+<div>Ready Made website k liye yaha visit kr k design choose kry.</div>
+</div>
+<a class="skill-btn" href="https://bloggeraihub.store" target="_blank">
+Visit Now
+</a>
+</div>
+<div class="skill-card">
+<div class="skill-title">Meta Ads Intermediate Level</div>
+<div class="skill-desc">
+Ma sikha raha hu Meta Ads. Special Pakistan Aur USA market k liye. Sales lani ha ya Traffic Ap contact kr skty ha. Is k ilawa service b le skty ha.
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-title">Ai Video and Poster Design</div>
+<div class="skill-desc">
+Agar apko Professional AI video ya Poster design kerwana ho ya kisi product ya service ki video banwani ha Affordable rates ma to ap hum par trust kr skty ha.
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ready Made Setup offer -->
+<section class="rms-section">
+<div class="rms-card">
+<div class="rms-badge">
+<span>&#9889;</span> Limited Offer
+</div>
+<h2 class="rms-heading">
+Ready Made<br/><em>Full Setup</em>
+</h2>
+<p class="rms-sub">
+Apni khud ki affiliate store chahiye &#8212; bina kisi jhanjhat ke?
+Hum aapko ek fully ready store denge jisme products, links aur sab kuch already set hoga.
+</p>
+<div class="rms-features">
+<div class="rms-feature">
+<div class="feat-icon">🛒</div>
+<div class="feat-text">
+<strong>Products Already Added</strong>
+<span>Store mein products pehle se lagy huwey honge</span>
+</div>
+</div>
+<div class="rms-feature">
+<div class="feat-icon">🔗</div>
+<div class="feat-text">
+<strong>Affiliate Links Set</strong>
+<span>Tumhare apne links already laga diye jayenge</span>
+</div>
+</div>
+<div class="rms-feature">
+<div class="feat-icon">🎨</div>
+<div class="feat-text">
+<strong>Professional Design</strong>
+<span>Clean aur converting store look</span>
+</div>
+</div>
+<div class="rms-feature">
+<div class="feat-icon">&#9881;&#65039;</div>
+<div class="feat-text">
+<strong>Fully Configured</strong>
+<span>Tamam cheezein set &#8212; bas traffic lao</span>
+</div>
+</div>
+<div class="rms-feature">
+<div class="feat-icon">📦</div>
+<div class="feat-text">
+<strong>Zero Hosting Cost</strong>
+<span>Blogger par free hosting &#8212; koi extra charge nahi</span>
+</div>
+</div>
+<div class="rms-feature">
+<div class="feat-icon">🚀</div>
+<div class="feat-text">
+<strong>Same Day Delivery</strong>
+<span>Order karo &#8212; 24 ghante mein ready</span>
+</div>
+</div>
+</div>
+<div class="rms-divider"></div>
+<div class="rms-bottom">
+<p class="rms-note">
+<strong>Sirf limited spots available hain.</strong><br/>
+Aaj hi claim karo aur apni earning journey shuru karo.
+</p>
+<a class="rms-btn" href="https://wa.me/923115922035?text=I%20want%20Ready%20Made%20Full%20Setup">
+Get Offer <span class="btn-arrow">&#8594;</span>
+</a>
+<p style="margin-top:10px;font-size:12px;color:#7777aa;text-align:center;letter-spacing:0.5px;">
+💰 Price: <strong style="color:#FFD700;">20,000 PKR</strong> Only &#8212; One Time Payment
+</p>
+</div>
+</div>
+</section>
+<!-- Community section -->
+<div class="ufc-section">
+<div class="ufc-inner">
+<div class="ufc-logo">👥</div>
+<h2 class="ufc-heading">Umer Farooq Community</h2>
+<p class="ufc-para">
+Join Umer Farooq Community for latest tips and useful journeys.
+Seekho, grow karo aur Pakistan mein affiliate marketing ki duniya mein aage badho.
+</p>
+<a class="ufc-btn" href="https://chat.whatsapp.com/I1ZY88qEXPdJ43vAxlUG89">
+👥 Join Now
+</a>
+</div>
+</div>
+<!-- Footer -->
+<footer class="main-footer" id="contact">
+<div class="footer-title">Umer Farooq XD</div>
+<div class="footer-desc">
+Learn professional affiliate marketing strategies and build powerful online income streams with your own website.
+</div>
+<a class="footer-btn" href="https://wa.me/923115922035" target="_blank">
+<svg fill="#fff" viewBox="0 0 32 32">
+<path d="M16 3C9.4 3 4 8.2 4 14.6c0 2.6.8 5 2.3 7L4 29l7.6-2.2c1.9 1 4 1.6 6.4 1.6 6.6 0 12-5.2 12-11.6S22.6 3 16 3z"></path>
+</svg>
+WhatsApp
+</a>
+<div class="footer-bottom">
+Love By
+<a href="https://wa.me/923115922035">
+Umer Farooq XD &#169; 2026
+</a>
+</div>
+</footer>
+<script>
+const menuIcon = document.querySelector(".menu-icon");
+const closeIcon = document.querySelector(".close-icon");
+const mobileMenuItems = document.querySelector(".mobile-menu-items");
+const allMobileMenuLinks = document.querySelectorAll(".mobile-menu-items a");
+
+const searchContainer = document.querySelector(".search-container");
+const searchIcons = document.querySelectorAll(".search-icon");
+const searchInput = document.querySelector(
+  ".search-input-container input[type='search']"
+);
+
+menuIcon.addEventListener("click", () => {
+  mobileMenuItems.classList.add("active");
+});
+
+closeIcon.addEventListener("click", () => {
+  mobileMenuItems.classList.remove("active");
+});
+
+allMobileMenuLinks.forEach((l) => {
+  l.addEventListener("click", () => {
+    mobileMenuItems.classList.remove("active");
+  });
+});
+
+// Search icon
+searchIcons.forEach((searchIcon) => {
+  searchIcon.addEventListener("click", () => {
+    searchContainer.classList.add("active");
+    searchInput.focus();
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    searchContainer.classList.remove("active");
+    searchInput.value = "";
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    e.target.closest(".search-input-container") ||
+    e.target.closest(".search-icon")
+  )
+    return;
+
+  searchContainer.classList.remove("active");
+  searchInput.value = "";
+});
+</script>
+</body>
+</html>
