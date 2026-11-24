@@ -1,83 +1,79 @@
 /*
- * Blogger Theme License Checker
- * Reads license-system/licenses.json from this same folder.
- *
- * Setup:
- * 1. Replace the sample customer names/dates in licenses.json.
- * 2. Add the loader snippet in the Blogger theme where the license check should run.
- *
- * Note: This is a basic client-side check, not tamper-proof DRM.
+ * Umer Farooq XD - Blogger Theme License Check
+ * Data source: licenses.json in the same GitHub folder.
+ * Basic browser-side validation only; not tamper-proof DRM.
  */
 (function () {
   "use strict";
 
-  var script = document.currentScript;
-  var scriptUrl = script && script.src ? script.src : "";
-  var dataUrl = scriptUrl
-    ? scriptUrl.replace(/license\.js(?:\?.*)?$/, "licenses.json")
-    : "";
-
   var root = document.getElementById("ufxd-license-root");
-  if (!root || !dataUrl) return;
+  if (!root) return;
 
   var customerName = (root.getAttribute("data-customer") || "").trim();
+  var dataUrl = root.getAttribute("data-license-url") || "";
 
-  function showMessage(title, message) {
+  function block(title, message) {
+    root.style.display = "flex";
     root.innerHTML =
-      '<div style="position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:24px;font-family:Arial,sans-serif;color:#fff;text-align:center;">' +
-        '<div style="max-width:440px;background:#171717;border:1px solid #444;border-radius:14px;padding:28px;">' +
-          '<h2 style="margin:0 0 12px;font-size:22px;">' + title + '</h2>' +
-          '<p style="margin:0;line-height:1.6;">' + message + '</p>' +
-        '</div>' +
-      '</div>';
+      '<div style="max-width:440px;background:#171717;border:1px solid #444;border-radius:14px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.45)">' +
+      '<h2 style="margin:0 0 12px;font-size:22px;color:#fff">' + title + '</h2>' +
+      '<p style="margin:0;line-height:1.6;color:#ddd">' + message + '</p></div>';
   }
 
-  if (!customerName) {
-    showMessage("License setup required", "Customer name is missing from the license configuration.");
+  function pakistanDate() {
+    var parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Karachi",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(new Date());
+    var values = {};
+    parts.forEach(function (part) { values[part.type] = part.value; });
+    return values.year + "-" + values.month + "-" + values.day;
+  }
+
+  if (!customerName || !dataUrl) {
+    block("License configuration error", "Theme license settings complete nahi hain.");
     return;
   }
 
   fetch(dataUrl, { cache: "no-store" })
     .then(function (response) {
-      if (!response.ok) throw new Error("License data could not be loaded.");
+      if (!response.ok) throw new Error("License data unavailable");
       return response.json();
     })
-    .then(function (data) {
-      var records = Array.isArray(data.licenses) ? data.licenses : [];
-      var record = records.find(function (item) {
-        return String(item.name || "").trim().toLowerCase() === customerName.toLowerCase();
-      });
+    .then(function (license) {
+      var savedName = String(license.name || "").trim().toLowerCase();
+      var expiryDate = String(license.expiry_date || "").trim();
 
-      if (!record || String(record.license).toLowerCase() !== "yes") {
-        showMessage("License inactive", "Is theme ki license active nahi hai. License provider se rabta karein.");
+      if (savedName !== customerName.toLowerCase()) {
+        block("License not found", "Is theme ke liye valid license record nahi mila.");
         return;
       }
 
-      var endDate = String(record.end_date || "");
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(endDate)) {
-        showMessage("License date error", "License ki end date sahi format mein set nahi hai.");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(expiryDate)) {
+        block("License date error", "License expiry date ka format valid nahi hai.");
         return;
       }
 
-      // End date ko last valid day samjha gaya hai (Pakistan time, poora din).
-      var parts = endDate.split("-").map(Number);
-      var expiry = Date.UTC(parts[0], parts[1] - 1, parts[2] + 1);
-      var now = Date.now() + (5 * 60 * 60 * 1000);
-      var pakistanNow = new Date(now);
-      var pakistanDayStart = Date.UTC(
-        pakistanNow.getUTCFullYear(),
-        pakistanNow.getUTCMonth(),
-        pakistanNow.getUTCDate()
-      );
-
-      if (!Number.isFinite(expiry) || pakistanDayStart >= expiry) {
-        showMessage("License expired", "Is theme ki license " + endDate + " ko expire ho chuki hai.");
+      var dateParts = expiryDate.split("-").map(Number);
+      var checkDate = new Date(Date.UTC(dateParts[0], dateParts[1] - 1, dateParts[2]));
+      if (checkDate.getUTCFullYear() !== dateParts[0] ||
+          checkDate.getUTCMonth() !== dateParts[1] - 1 ||
+          checkDate.getUTCDate() !== dateParts[2]) {
+        block("License date error", "License expiry date valid calendar date nahi hai.");
         return;
       }
 
-      root.setAttribute("data-license-status", "active");
+      // Expiry date last valid day hai; Pakistan time mein aglay din expire hogi.
+      if (pakistanDate() > expiryDate) {
+        block("License expired", "Is theme ki license expiry date " + expiryDate + " thi.");
+        return;
+      }
+
+      root.remove();
     })
     .catch(function () {
-      showMessage("License check failed", "License server se data load nahi ho saka. Internet connection check karein.");
+      block("License check failed", "License data load nahi ho saka. Internet connection ya CDN availability check karein.");
     });
 })();
