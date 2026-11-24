@@ -1,118 +1,119 @@
 /*
- * Umer Farooq XD - Blogger Theme License Check
- * Reads one license record from licenses.json.
- * Client-side validation is a basic access gate, not tamper-proof DRM.
+ * Blogger Theme Access Check
+ * Reads the text inside .sliders-x and compares it with the approved list.
+ * This is a client-side allowlist check, not tamper-proof DRM.
  */
 (function () {
   "use strict";
 
-  var root = document.getElementById("ufxd-license-root");
-  if (!root) {
-    console.error("[UFXD License] License root element #ufxd-license-root was not found.");
-    return;
+  var APPROVED_NAMES = [
+    "A", "B", "C", "D", "E", "F", "G",
+    "Ali", "Umar", "Farooq"
+  ];
+
+  var ROOT_CLASS = "sliders-x";
+  var STYLE_ID = "sliders-x-access-style";
+  var POPUP_ID = "sliders-x-access-popup";
+
+  function hideMarker(element) {
+    if (!element) return;
+    element.setAttribute("aria-hidden", "true");
+    element.style.setProperty("display", "none", "important");
   }
 
-  var customerName = (root.getAttribute("data-customer") || "").trim();
-  var dataUrl = (root.getAttribute("data-license-url") || "").trim();
-  var timeoutMs = 12000;
-  var timeoutId = null;
-  var finished = false;
+  function injectStyles() {
+    if (document.getElementById(STYLE_ID)) return;
 
-  function showStatus(title, message) {
-    if (finished) return;
-    finished = true;
-    if (timeoutId !== null) window.clearTimeout(timeoutId);
-    root.style.display = "flex";
-    root.innerHTML =
-      '<div style="max-width:440px;background:#171717;border:1px solid #444;border-radius:14px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.45)">' +
-      '<h2 style="margin:0 0 12px;font-size:22px;color:#fff">' + title + '</h2>' +
-      '<p style="margin:0;line-height:1.6;color:#ddd">' + message + '</p></div>';
-  }
-
-  function pakistanDate() {
-    var parts = new Intl.DateTimeFormat("en-CA", {
-      timeZone: "Asia/Karachi",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit"
-    }).formatToParts(new Date());
-    var values = {};
-    parts.forEach(function (part) { values[part.type] = part.value; });
-    return values.year + "-" + values.month + "-" + values.day;
-  }
-
-  function validCalendarDate(value) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
-    var p = value.split("-").map(Number);
-    var d = new Date(Date.UTC(p[0], p[1] - 1, p[2]));
-    return d.getUTCFullYear() === p[0] &&
-      d.getUTCMonth() === p[1] - 1 &&
-      d.getUTCDate() === p[2];
-  }
-
-  if (!customerName || !dataUrl) {
-    showStatus("License configuration error", "Theme license settings complete nahi hain.");
-    return;
-  }
-
-  if (!window.fetch) {
-    showStatus("Browser not supported", "Is browser mein license check support nahi ho raha. Updated browser use karein.");
-    return;
-  }
-
-  var controller = window.AbortController ? new AbortController() : null;
-  timeoutId = window.setTimeout(function () {
-    if (controller) controller.abort();
-    showStatus("License check timed out", "License server se 12 seconds mein response nahi mila. Page refresh karke dobara try karein.");
-  }, timeoutMs);
-
-  // Unique query value avoids stale CDN/browser cache during license updates.
-  var requestUrl = dataUrl + (dataUrl.indexOf("?") === -1 ? "?" : "&") + "check=" + Date.now();
-
-  fetch(requestUrl, {
-    method: "GET",
-    cache: "no-store",
-    signal: controller ? controller.signal : undefined
-  })
-    .then(function (response) {
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      return response.json();
-    })
-    .then(function (license) {
-      if (finished) return;
-
-      if (!license || typeof license !== "object" || Array.isArray(license)) {
-        throw new Error("Unexpected JSON structure");
+    var style = document.createElement("style");
+    style.id = STYLE_ID;
+    style.textContent = `
+      #${POPUP_ID} {
+        position: fixed; inset: 0; z-index: 2147483647;
+        display: flex; align-items: center; justify-content: center;
+        padding: 20px; background: rgba(15, 23, 42, .58);
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
       }
-
-      var savedName = String(license.name || "").trim().toLowerCase();
-      var expiryDate = String(license.expiry_date || "").trim();
-
-      if (!savedName || savedName !== customerName.toLowerCase()) {
-        showStatus("License not found", "Is theme ke liye valid license record nahi mila.");
-        return;
+      #${POPUP_ID} .sx-card {
+        box-sizing: border-box; width: 100%; max-width: 390px;
+        padding: 30px 26px 26px; border: 1px solid #e5e7eb;
+        border-radius: 18px; background: #fff; color: #1c1e21;
+        text-align: center; box-shadow: 0 18px 60px rgba(0,0,0,.22);
       }
-
-      if (!validCalendarDate(expiryDate)) {
-        showStatus("License date error", "License expiry date YYYY-MM-DD format mein valid date nahi hai.");
-        return;
+      #${POPUP_ID} .sx-mark {
+        width: 54px; height: 54px; margin: 0 auto 18px;
+        display: grid; place-items: center; border-radius: 50%;
+        background: #fff1f0; color: #d93025; font-size: 26px;
+        font-weight: 700;
       }
-
-      // Expiry date is the final valid day. It expires after that date in Pakistan time.
-      if (pakistanDate() > expiryDate) {
-        showStatus("License expired", "Is theme ki license expiry date " + expiryDate + " thi.");
-        return;
+      #${POPUP_ID} h2 {
+        margin: 0 0 10px; font-size: 21px; line-height: 1.3;
+        font-weight: 700; letter-spacing: -.3px;
       }
+      #${POPUP_ID} p {
+        margin: 0; color: #606770; font-size: 14px; line-height: 1.65;
+      }
+      #${POPUP_ID} .sx-note {
+        margin-top: 20px; padding-top: 16px; border-top: 1px solid #edf0f2;
+        color: #8a8d91; font-size: 12px;
+      }
+    `;
+    document.head.appendChild(style);
+  }
 
-      finished = true;
-      window.clearTimeout(timeoutId);
-      root.remove();
-      console.info("[UFXD License] Valid license for:", customerName, "| Expiry:", expiryDate);
-    })
-    .catch(function (error) {
-      if (finished) return;
-      window.clearTimeout(timeoutId);
-      console.error("[UFXD License] Check failed:", error);
-      showStatus("License check failed", "License data load ya verify nahi ho saka. Internet, CDN link aur JSON file check karein.");
+  function showPopup() {
+    if (document.getElementById(POPUP_ID)) return;
+
+    injectStyles();
+
+    var overlay = document.createElement("div");
+    overlay.id = POPUP_ID;
+    overlay.setAttribute("role", "alertdialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-labelledby", "sx-popup-title");
+
+    overlay.innerHTML =
+      '<div class="sx-card">' +
+        '<div class="sx-mark" aria-hidden="true">!</div>' +
+        '<h2 id="sx-popup-title">License Verification Failed</h2>' +
+        '<p>This theme is not authorized for use. Please contact the theme provider to verify your access.</p>' +
+        '<div class="sx-note">Access verification required</div>' +
+      '</div>';
+
+    document.body.appendChild(overlay);
+  }
+
+  function verify() {
+    var marker = document.querySelector("." + ROOT_CLASS);
+
+    if (!marker) {
+      showPopup();
+      return;
+    }
+
+    var enteredName = (marker.textContent || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+
+    hideMarker(marker);
+
+    var isApproved = APPROVED_NAMES.some(function (name) {
+      return name.toLowerCase() === enteredName;
     });
+
+    if (!isApproved) {
+      showPopup();
+    }
+  }
+
+  function start() {
+    verify();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start, { once: true });
+  } else {
+    start();
+  }
 })();
