@@ -1,0 +1,14 @@
+{
+  "licenses": [
+    {
+      "name": "Customer One",
+      "license": "yes",
+      "end_date": "2027-01-24"
+    },
+    {
+      "name": "Customer Two",
+      "license": "no",
+      "end_date": "2027-02-15"
+    }
+  ]
+}
