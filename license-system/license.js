@@ -15,11 +15,13 @@
   var customerName = (root.getAttribute("data-customer") || "").trim();
   var dataUrl = (root.getAttribute("data-license-url") || "").trim();
   var timeoutMs = 12000;
+  var timeoutId = null;
   var finished = false;
 
   function showStatus(title, message) {
     if (finished) return;
     finished = true;
+    if (timeoutId !== null) window.clearTimeout(timeoutId);
     root.style.display = "flex";
     root.innerHTML =
       '<div style="max-width:440px;background:#171717;border:1px solid #444;border-radius:14px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.45)">' +
@@ -59,7 +61,7 @@
   }
 
   var controller = window.AbortController ? new AbortController() : null;
-  var timeoutId = window.setTimeout(function () {
+  timeoutId = window.setTimeout(function () {
     if (controller) controller.abort();
     showStatus("License check timed out", "License server se 12 seconds mein response nahi mila. Page refresh karke dobara try karein.");
   }, timeoutMs);
