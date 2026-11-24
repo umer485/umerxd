@@ -1,31 +1,25 @@
 # Blogger Theme License System
 
-Yeh basic client-side license checker hai.
+The Blogger theme loads `license.js` from jsDelivr. The script fetches `licenses.json` from this same GitHub folder.
 
-## Files
-- `licenses.json`: customer ka name, license status aur end date.
-- `license.js`: JSON read karke license check karta hai.
+## Current JSON format
 
-## Customer record
 ```json
 {
-  "name": "Customer Name",
-  "license": "yes",
-  "end_date": "2027-01-24"
+  "name": "Ali",
+  "expiry_date": "2027-02-03"
 }
 ```
 
-- `license`: sirf `yes` ya `no`
-- `end_date`: `YYYY-MM-DD` format
-- End date ko last valid day maana gaya hai; Pakistan time ke mutabiq aglay din se license expired hoga.
+- `name`: must match the customer name configured in the Blogger theme.
+- `expiry_date`: date format `YYYY-MM-DD`.
+- The expiry date is treated as the final valid day. The license expires after that day in Pakistan time.
 
-## Blogger loader example
-Repository ki public CDN URL use karte hue Blogger theme mein yeh structure add karein (customer name replace karein):
+## CDN files
 
-```html
-<div id="ufxd-license-root" data-customer="Customer Name"></div>
-<script src="https://cdn.jsdelivr.net/gh/umer485/umerxd@main/license-system/license.js"></script>
-```
+- Script: https://cdn.jsdelivr.net/gh/umer485/umerxd@main/license-system/license.js
+- JSON: https://cdn.jsdelivr.net/gh/umer485/umerxd@main/license-system/licenses.json
 
 ## Important limitation
-Yeh browser-side check hai. JSON public hai aur JavaScript user ke browser mein execute hoti hai, is liye technically skilled user check ko bypass ya files copy kar sakta hai. Isay strong DRM/security na samjhein. Public JSON mein private data ya passwords kabhi na rakhein.
+
+This is a basic browser-side check, not tamper-proof DRM. The JSON is public and browser JavaScript can be inspected or bypassed. Do not put secrets or passwords in this JSON file.
