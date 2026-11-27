@@ -53,7 +53,7 @@
         last[depth]=$li;
         last.length=depth+1;
       });
-      $list.find('li').has('> ul.sub-menu').addClass('has-sub');
+      $list.find('li').each(function(){if($(this).children('ul.sub-menu').length) $(this).addClass('has-sub');});
     });
   };
 }(jQuery);
